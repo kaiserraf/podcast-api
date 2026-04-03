@@ -6,15 +6,16 @@ const server = http.createServer(
     async (req:http.IncomingMessage,res:http.ServerResponse) =>{
 
         // QueryString
-        // http://localhost:3333/api/list?p=PodPah
-
         const [baseUrl, queryString] = req.url?.split("?") ?? ["",""];
+
+        console.log(baseUrl);
+        console.log(queryString);
 
         if(req.method === "GET" && baseUrl === "/api/list"){
             await getListEps(req, res);
         }
 
-        if(req.method === "GET" && baseUrl === "/api/list/flow-podcast"){
+        if(req.method === "GET" && baseUrl === "/api/episode"){
             await getFilterEps(req, res);
         }
     }
