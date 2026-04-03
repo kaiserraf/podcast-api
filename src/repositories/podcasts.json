@@ -1,0 +1,26 @@
+[
+    {
+       "podcastName": "Flow Podcast",
+       "episode": "TECNOLOGIA E IA [+ FABIO AKITA]",
+       "videoId": "--slRywdonM",
+       "categories": ["tecnologia", "ia"]
+    },
+    {
+       "podcastName": "Flow Podcast",
+       "episode": "ARTHUR PETRY E KAIO D`ELAQUA - Extra Flow",
+       "videoId": "kBYXJGooOz0",
+       "categories": ["humor", "Extra Flow"]
+    },
+    {
+       "podcastName": "Flow Podcast",
+       "episode": "Japones - Extra Flow",
+       "videoId": "hdpHepljrFEp",
+       "categories": ["humor", "Extra Flow"]
+    },
+    {
+       "podcastName": "PodPah",
+       "episode": "Igor3k",
+       "videoId": "hdpHepljrFEp",
+       "categories": ["humor"]
+    }
+]
