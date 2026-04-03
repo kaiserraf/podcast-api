@@ -1,12 +1,16 @@
 import * as http from 'http'; // importando o modulo http padrão do node
-import { getListEps } from './controllers/podcastsController';
+import { getFilterEps, getListEps } from './controllers/podcastsController';
 
 // criação do servidor com request e response
 const server = http.createServer(
     async (req:http.IncomingMessage,res:http.ServerResponse) =>{
-        if(req.method === "GET"){
+        if(req.method === "GET" && req.url === "/api/list"){
             await getListEps(req, res);
-        }   
+        }
+
+        if(req.method === "GET" && req.url === "/api/list/flow-podcast"){
+            await getFilterEps(req, res);
+        }
     }
 );
 
