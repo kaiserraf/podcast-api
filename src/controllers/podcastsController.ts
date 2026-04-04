@@ -1,20 +1,22 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { serviceListEp } from '../services/listEp';
 import { serverFilterEp } from '../services/filterEp';
-import { StatusCode } from '../utils/statusCode';
 import { ContentType } from '../utils/contentType';
+import { FilterPodcastModel } from '../models/responseModel';
 
 export const getListEps = async (req:IncomingMessage, res:ServerResponse) => {
 
-    const content = await serviceListEp(); // puxa a listEp de services
+    const content:FilterPodcastModel = await serviceListEp(); // puxa a listEp de services
 
-    res.writeHead(StatusCode.SUCCESS, {'content-type': ContentType.JSON}); // escrever no cabeçalho
-    res.end(JSON.stringify(content));// escrever no conteudo
+    res.writeHead(content.statusCode, {'content-type': ContentType.JSON}); // escrever no cabeçalho
+    res.write(JSON.stringify(content.body));// escrever no conteudo
+    res.end();
 };
 
 export const getFilterEps = async (req:IncomingMessage, res:ServerResponse) => {
-    const content = await serverFilterEp(req.url);
+    const content:FilterPodcastModel = await serverFilterEp(req.url);
 
-    res.writeHead(StatusCode.SUCCESS, {'content-type': ContentType.JSON});
-    res.end(JSON.stringify(content)); // stringfy = muda de json pra texto
+    res.writeHead(content.statusCode, {'content-type': ContentType.JSON});
+    res.write(JSON.stringify(content.body)); // stringfy = muda de json pra texto
+    res.end();
 }
