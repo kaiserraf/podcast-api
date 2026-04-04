@@ -22,5 +22,5 @@ Este repositório foi desenvolvido como parte prática do curso **Node.js Basics
 ---
 
 ## 📖 Funcionalidades
-* **GET** `/podcasts`: Retorna a lista completa de programas.
-* **GET** `/podcasts?name=...`: Filtra podcasts por nome via query string.
+* **GET** `/list`: Retorna a lista completa de programas.
+* **GET** `/podcasts?p=...`: Filtra podcasts por nome via query string.
