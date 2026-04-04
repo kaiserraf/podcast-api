@@ -17,7 +17,9 @@ Este repositório foi desenvolvido como parte prática do curso **Node.js Basics
 ![DIO](https://img.shields.io/badge/Study-DIO-orange?style=for-the-badge)
 
 #### Fluxo de Funcionamento:
-![API Flow](https://github.com/kaiserraf/podcast-api/blob/bd8f73f26795562743a6ee9cbbf8640e3def4ec4/docs/Arch/archteture.png) 
+![API Flow](https://github.com/kaiserraf/podcast-api/blob/bd8f73f26795562743a6ee9cbbf8640e3def4ec4/docs/Arch/archteture.png)
+
+<img src="https://github.com/kaiserraf/podcast-api/blob/bd8f73f26795562743a6ee9cbbf8640e3def4ec4/docs/Arch/archteture.png" alt="arch">
 *(Nota: Certifique-se de que a imagem exista no seu repositório ou substitua por um link válido)*
 
 ---
