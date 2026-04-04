@@ -1,1 +1,0 @@
-# parei em QueryString

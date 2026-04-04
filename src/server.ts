@@ -1,23 +1,16 @@
 import * as http from 'http'; // importando o modulo http padrão do node
 import { getFilterEps, getListEps } from './controllers/podcastsController';
+import { Routes } from './routes/routes';
+import { HttpMethod } from './utils/httpMethods';
 
 // criação do servidor com request e response
 const server = http.createServer(
     async (req:http.IncomingMessage,res:http.ServerResponse) =>{
+        const [baseUrl, queryString] = req.url?.split("?") ?? ["",""]; // QueryString
 
-        // QueryString
-        const [baseUrl, queryString] = req.url?.split("?") ?? ["",""];
+        if(req.method === HttpMethod.GET && baseUrl === Routes.LIST) await getListEps(req, res);
+        if(req.method === HttpMethod.GET && baseUrl === Routes.EPISODE) await getFilterEps(req, res);
 
-        console.log(baseUrl);
-        console.log(queryString);
-
-        if(req.method === "GET" && baseUrl === "/api/list"){
-            await getListEps(req, res);
-        }
-
-        if(req.method === "GET" && baseUrl === "/api/episode"){
-            await getFilterEps(req, res);
-        }
     }
 );
 
